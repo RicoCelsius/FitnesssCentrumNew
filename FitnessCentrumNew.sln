@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnesssCentrumNew", "FitnesssCentrumNew\FitnesssCentrumNew.csproj", "{78AF70D4-5CBF-4D4A-955A-99AF84233C94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitnessCentrumNew", "FitnesssCentrumNew\FitnessCentrumNew.csproj", "{78AF70D4-5CBF-4D4A-955A-99AF84233C94}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{38DD13C3-A36B-42F5-BFBA-8F3D01AE8E01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{FF42910D-E53A-40BB-883E-587AE1582FDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{FF42910D-E53A-40BB-883E-587AE1582FDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

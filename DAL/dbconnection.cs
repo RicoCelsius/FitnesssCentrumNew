@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using MySql.Data.MySqlClient;
-
+using Org.BouncyCastle.Asn1;
 
 namespace DAL
 {
     public class dbconnection
     {
-        private Boolean isConnected = false;
-        private MySqlConnection connection = new MySqlConnection();
+        private static Boolean isConnected = false;
+        private static MySqlConnection connection = new MySqlConnection();
 
         public dbconnection()
         {
@@ -33,12 +35,13 @@ namespace DAL
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+                isConnected = false;
 
             }
 
         }
 
-        public void query(string query)
+        public void InsertUpdateDelete(string query)
         {
             if (isConnected)
             {
@@ -48,6 +51,24 @@ namespace DAL
                 }
             }
         }
+        public static DataTable Select(string query)
+        {
+            DataTable result = new DataTable();
+            if (isConnected)
+            {
+
+                using (MySqlCommand sqlcomm = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = sqlcomm.ExecuteReader())
+                    {
+                        result.Load(reader);
+                        return result;
+                    }
+                }
+            }
+            return result;
+        }
+
 
 
 

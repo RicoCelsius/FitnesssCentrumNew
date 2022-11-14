@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 namespace FitnesssCentrumNew.Controllers
 {
-    public class LoginController : Controller
+    public class ViewCustomerController : Controller
     {
        
         public IActionResult Index()
@@ -13,7 +13,7 @@ namespace FitnesssCentrumNew.Controllers
             return View();
         }
 
-        public IActionResult Login()
+        public IActionResult Show()
         {
             return View();
         }
@@ -21,15 +21,13 @@ namespace FitnesssCentrumNew.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(UserRegModel ur)
+        public IActionResult Show(CustomerModel ur)
         {
 
 
             if (ModelState.IsValid)
             {
   
-                //todo, safe SQL string
-                DAL.dbconnection.Select($"select Email,Password FROM employee where Email='{ur.Email}' and Password={ur.Password}");
 
                 return View();
             

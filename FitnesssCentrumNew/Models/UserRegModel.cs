@@ -2,7 +2,7 @@
 
 namespace FitnesssCentrumNew.Models {
 
-    public class UserReg
+    public class UserRegModel
     {
 
         [Key]
@@ -10,11 +10,11 @@ namespace FitnesssCentrumNew.Models {
 
         [Display(Name = "Email")]
         [Required(ErrorMessage = "Please enter an email")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Display(Name = "Password")]
         [Required(ErrorMessage = "Please enter an password")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string? Password { get; set; }
     }
 }

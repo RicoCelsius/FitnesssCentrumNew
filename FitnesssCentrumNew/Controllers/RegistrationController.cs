@@ -2,6 +2,7 @@
 using FitnesssCentrumNew;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
+using Logic;
 
 namespace FitnesssCentrumNew.Controllers
 {
@@ -18,14 +19,16 @@ namespace FitnesssCentrumNew.Controllers
             return View();
         }
 
+  
 
         [HttpPost]
-        public IActionResult Create(UserReg ur)
+        public IActionResult Create(UserRegModel ur)
         {
 
-            DAL.dbconnection f = new DAL.dbconnection();
-            string sqlquery = "insert into employee(Email,Password) values('"+ur.Email+"','"+ur.Password+"')";
-            f.query(sqlquery);
+            DAL.dbconnection f = new DAL.dbconnection(); //logica object aanmaken, dal object meegeven.
+        
+            string sqlquery = $"insert into employee(Email,Password) values({ur.Email},{ur.Password})";
+            f.InsertUpdateDelete(sqlquery);
             return View(ur);
         }
 
